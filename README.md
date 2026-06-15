@@ -2,12 +2,12 @@
 
 This repository contains the training scripts and LLaMA-Factory configuration files used for fine-tuning Qwen2.5-Coder models on assembly translation datasets.
 
-**Important:** this setup is intended for **NVIDIA GPUs with CUDA**. It has been tested on NVIDIA L40 GPUs. It is **not configured for AMD/ROCm**.
+**Important:** this setup is intended for **NVIDIA GPUs with CUDA**. It has been tested on NVIDIA L40 and H100 GPUs. It is **not configured for AMD/ROCm**.
 
 ## Repository layout
 
 ```text
-alex_training/
+alex_training_nvidia/
   setup_alextraining.sh
   alex_training_env.txt
   llamafac/
@@ -25,7 +25,7 @@ alex_training/
 
 ```bash
 git clone <repo-url>
-cd alex_training
+cd alex_training_nvidia
 ```
 
 ## Step 1: Set up the environment

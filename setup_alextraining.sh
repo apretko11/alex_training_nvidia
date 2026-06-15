@@ -43,6 +43,16 @@ echo "=== Installing PyTorch (CUDA 12.1 wheel) ==="
 pip install torch==2.5.1+cu121 torchvision==0.20.1+cu121 torchaudio==2.5.1+cu121 \
   --index-url https://download.pytorch.org/whl/cu121
 
+echo "=== Checking torchrun ==="
+if ! command -v torchrun &> /dev/null; then
+    echo "torchrun not found; creating wrapper in conda env..."
+    cat > "$CONDA_PREFIX/bin/torchrun" <<'EOF'
+#!/usr/bin/env bash
+exec python -m torch.distributed.run "$@"
+EOF
+    chmod +x "$CONDA_PREFIX/bin/torchrun"
+fi
+
 echo "=== Installing remaining requirements from $REQ_FILE ==="
 pip install -r $REQ_FILE
 

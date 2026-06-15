@@ -1,0 +1,17 @@
+
+# never commit local env files
+LLaMA-Factory/.env.local
+
+# never commit generated datasets
+LLaMA-Factory/data/
+
+# never commit inference stuff
+LLaMA-Factory/examples/inference/
+
+# never commit python build artifacts
+**/__pycache__/
+**/*.pyc
+LLaMA-Factory/src/llamafactory.egg-info/
+
+# never commit llvmir_transfer (entire folder)
+llvmir_transfer/

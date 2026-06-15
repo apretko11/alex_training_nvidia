@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Training outputs
+saves/
+*/saves/
+logs/
+*/logs/
+wandb/
+*/wandb/
+
+# Caches
+.cache/
+hf_cache/
+*.cache
+
+# Environment/secrets
+.env
+.env.*
+*.key
+*token*
+*secret*
+
+# Large/generated datasets/results
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.parquet
+*.jsonl
+
+# Keep JSON configs, but avoid accidental result dumps manually.

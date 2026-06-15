@@ -3,7 +3,11 @@
 LLaMA-Factory/.env.local
 
 # never commit generated datasets
-LLaMA-Factory/data/
+# Keep data generation scripts/metadata, but ignore generated dataset shards
+LLaMA-Factory/data/*.json
+!LLaMA-Factory/data/dataset_info.json
+LLaMA-Factory/data/*.jsonl
+LLaMA-Factory/data/*.parquet
 
 # never commit inference stuff
 LLaMA-Factory/examples/inference/
